@@ -10,7 +10,7 @@ const chokidar = require('chokidar');
 const execa = require('execa');
 
 const { logger } = require('strapi-utils');
-const loadConfigFile = require('../load-utils/load-config-files');
+const loadConfigFile = require('../strapi-load-utils/load-config-files');
 
 const strapi = require('strapi');
 const yargs = require('yargs');
@@ -20,9 +20,23 @@ const argv = yargs
     description: 'strapi dir',
     type: 'string'
   })
+  .option('root', {
+    description: 'strapi root',
+    type: 'string'
+  })
+  .option('name', {
+    description: 'strapi name',
+    type: 'string'
+  })
   .argv;
 
- const develop = async function({ dir = process.cwd(), build, watchAdmin }) {
+ const develop = async function({
+   dir = process.cwd(),
+   root,
+   name,
+   build,
+   watchAdmin
+  }) {
     const envConfigDir = path.join(dir, 'config', 'environments', 'development');
     const serverConfig = await loadConfigFile(envConfigDir, 'server.+(js|json)');
     const adminWatchIgnoreFiles = _.get(
@@ -53,7 +67,7 @@ const argv = yargs
         //  Start the front-end dev server
         if (watchAdmin) {
           try {
-            execa('npm', ['run', '-s', 'strapi', 'watch-admin'], {
+            execa('node', [`${root}/node_module/${name}/develop/strapi-watch-admin.js`], {
               stdio: 'inherit',
             });
           } catch (err) {
@@ -167,4 +181,9 @@ const argv = yargs
       });
   }
 
-return develop({ watchAdmin: true, dir: argv.dir });
+return develop({
+  watchAdmin: true,
+  dir: argv.dir,
+  root: argv.root,
+  name: argv.name
+});

@@ -9,14 +9,16 @@ export default createBuilder<{ root: string; }>((options, context) => {
       `node`,
       [
         `${context.workspaceRoot}/node_modules/${name}/develop/strapi-develop.js`,
-        `--dir=${context.workspaceRoot}/${options.root}`
+        `--dir=${context.workspaceRoot}/${options.root}`,
+        `--root=${context.workspaceRoot}`,
+        `--name=${name}`
       ],
-      {
-        env: {
-          ...process.env,
-          NODE_ENV: 'production'
-        }
-      }
+      // {
+      //   env: {
+      //     ...process.env,
+      //     NODE_ENV: 'production'
+      //   }
+      // }
     );
 
     ls.on('close', (code) => {

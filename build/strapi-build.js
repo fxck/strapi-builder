@@ -9,8 +9,8 @@ const _ = require('lodash');
 const { green, yellow } = require('chalk');
 // eslint-disable-next-line node/no-extraneous-require
 const strapiAdmin = require('strapi-admin');
-const loadConfigFile = require('../load-utils/load-config-files');
-const addSlash = require('./utils/addSlash');
+const loadConfigFile = require('../strapi-load-utils/load-config-files');
+const addSlash = require('../strapi-utils/addSlash');
 
 const buildCommand = async ({
   clean,
