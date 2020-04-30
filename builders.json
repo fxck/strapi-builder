@@ -9,6 +9,11 @@
       "implementation": "./start/start.impl",
       "schema": "./start/schema.json",
       "description": "Start strapi."
+    },
+    "develop": {
+      "implementation": "./develop/develop.impl",
+      "schema": "./develop/schema.json",
+      "description": "Develop strapi."
     }
   }
 }
