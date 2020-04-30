@@ -1,12 +1,16 @@
 {
   "name": "@zerops/strapi-builder",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "private": false,
   "description": "Strapi Plugin for Nx",
   "author": "Ales Rechtorik",
   "builders": "./builders.json",
+  "scripts": {
+    "build": "./node_modules/.bin/tsc index.ts'"
+  },
   "dependencies": {
     "@angular-devkit/architect": "~0.901.0",
+    "@types/node": "^13.13.4",
     "rxjs": "6.5.4"
   },
   "devDependencies": {

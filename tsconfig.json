@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "target": "es5",
-    "module": "esnext",
-    "baseUrl": ".",
-    "rootDir": ".",
-    "lib": [ "es2017" ],
+    "outDir": "build",
+    "typeRoots": ["node_modules/@types"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "strict": true,
-    "esModuleInterop": true
+    "types": ["node"],
+    "lib": ["es2018"],
+    "declaration": true,
+    "baseUrl": "."
   },
-  "exclude": [ "node_modules" ]
+  "exclude": [
+  ]
 }
