@@ -7,7 +7,7 @@ export default createBuilder((options, context) => {
     const ls = spawn('strapi', ['-v']);
 
     ls.on('close', (code) => {
-      console.log(`Exited with code ${code}`);
+      console.log(`Exited with code pica ${code}`);
       resolve({ success: true });
     });
 
