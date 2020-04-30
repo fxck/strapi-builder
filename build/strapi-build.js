@@ -12,7 +12,12 @@ const strapiAdmin = require('strapi-admin');
 const loadConfigFile = require('./load/load-config-files');
 const addSlash = require('./utils/addSlash');
 
-const buildCommand = async ({ clean, optimization, dir = process.cwd() }) => {
+const buildCommand = async ({
+  clean,
+  optimization,
+  dir = process.cwd(),
+  outputPath
+}) => {
   const env = process.env.NODE_ENV || 'development';
 
   const envConfigDir = path.join(dir, 'config', 'environments', env);
@@ -49,6 +54,11 @@ const buildCommand = async ({ clean, optimization, dir = process.cwd() }) => {
           publicPath: addSlash(adminPath),
         },
       });
+
+    if (outputPath) {
+      await fs.copySync(dir, outputPath);
+    }
+
     process.exit();
   }
   catch (err) {
