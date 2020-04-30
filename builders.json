@@ -8,7 +8,7 @@
     "start": {
       "implementation": "./start/start.impl",
       "schema": "./start/schema.json",
-      "description": "Builds strapi."
-    }    
+      "description": "Start strapi."
+    }
   }
 }

@@ -2,4 +2,4 @@
 
 const strapi = require('strapi');
 
-module.exports = () => strapi().start();
+return strapi().start();
