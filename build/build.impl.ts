@@ -1,10 +1,9 @@
 import { BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { spawn } from 'child_process';
 
-
 export default createBuilder((options, context) => {
   return new Promise<BuilderOutput>(resolve => {
-    const ls = spawn('strapi', ['-v']);
+    const ls = spawn('./node_modules/.bin/strapi', [ 'build' ]);
 
     ls.on('close', (code) => {
       console.log(`Exited with code pica ${code}`);
