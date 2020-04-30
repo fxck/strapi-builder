@@ -1,6 +1,6 @@
 const { spawn } = require('child_process');
 
-const ls = spawn('./node_modules/.bin/strapi', ['-v']);
+const ls = spawn('./node_modules/.bin/strapi', ['build']);
 
 ls.on('close', (code) => {
   console.log(`Exited with code pica ${code}`);
