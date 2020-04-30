@@ -1,10 +1,9 @@
 import { BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { spawn } from 'child_process';
 
-export default createBuilder((options, context) => {
+export default createBuilder<{ root: string; }>((options, context) => {
   return new Promise<BuilderOutput>(resolve => {
-    console.log(options, context);
-    const ls = spawn('./node_modules/.bin/strapi', [ 'build' ]);
+    const ls = spawn(`cd ${context.workspaceRoot}/${options.root} && ${context.workspaceRoot}/node_modules/.bin/strapi`, [ 'build' ]);
 
     ls.on('close', (code) => {
       console.log(`Exited with code ${code}`);
