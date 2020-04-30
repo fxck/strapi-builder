@@ -3,7 +3,7 @@ import { spawn } from 'child_process';
 
 export default createBuilder<{ root: string; }>((options, context) => {
   return new Promise<BuilderOutput>(resolve => {
-    const ls = spawn(`cd ${context.workspaceRoot}/${options.root} && ${context.workspaceRoot}/node_modules/.bin/strapi`, [ 'build' ]);
+    const ls = spawn(`cd ${context.workspaceRoot}/${options.root} && node ${context.workspaceRoot}/node_modules/.bin/strapi`, [ 'build' ]);
 
     ls.on('close', (code) => {
       console.log(`Exited with code ${code}`);
