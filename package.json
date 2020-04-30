@@ -1,6 +1,7 @@
 {
   "name": "@zerops/strapi-builder",
-  "version": "0.0.3",
+  "version": "0.0.5",
+  "private": false,
   "description": "Strapi Plugin for Nx",
   "author": "Ales Rechtorik",
   "builders": "./builders.json",
