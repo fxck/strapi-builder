@@ -10,7 +10,7 @@ const { green, yellow } = require('chalk');
 // eslint-disable-next-line node/no-extraneous-require
 const strapiAdmin = require('strapi-admin');
 const loadConfigFile = require('./load/load-config-files');
-const { addSlash } = require('strapi-utils');
+const addSlash = require('./utils/addSlash');
 
 // console.log(process);
 
