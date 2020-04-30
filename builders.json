@@ -4,6 +4,11 @@
       "implementation": "./build/build.impl",
       "schema": "./build/schema.json",
       "description": "Builds strapi."
-    }
+    },
+    "start": {
+      "implementation": "./start/start.impl",
+      "schema": "./start/schema.json",
+      "description": "Builds strapi."
+    }    
   }
 }
