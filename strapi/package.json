@@ -1,0 +1,10 @@
+{
+  "name": "@zerops-builders/strapi",
+  "version": "0.0.1",
+  "description": "Strapi Plugin for Nx",
+  "author": "Ales Rechtorik",
+  "builders": "./builders.json",
+  "dependencies": {
+    "@angular-devkit/architect": "~0.901.0"
+  }
+}
