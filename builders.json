@@ -6,9 +6,9 @@
       "description": "Builds strapi."
     },
     "serve": {
-      "implementation": "./develop/develop.impl",
-      "schema": "./develop/schema.json",
-      "description": "Develop strapi."
+      "implementation": "./start/start.impl",
+      "schema": "./start/schema.json",
+      "description": "Start strapi."
     }
   }
 }
