@@ -7,12 +7,9 @@ const exec = (commands: any) => {
   return spawn(commands, { stdio: "inherit", shell: true });
 };
 
-// use like this
-exec("npm run build");
-
 export default createBuilder((options, context) => {
   return new Promise<BuilderOutput>(resolve => {
-    const ls = exec('npm run strapi-build');
+    const ls = exec('strapi build');
 
     ls.on('close', (code) => {
       console.log(`Exited with code ${code}`);
