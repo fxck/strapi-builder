@@ -5,10 +5,19 @@ const { name } = require('../package.json');
 export default createBuilder<{ root: string; }>((options, context) => {
   return new Promise<BuilderOutput>(resolve => {
 
-    const ls = spawn(`node`, [
-      `${context.workspaceRoot}/node_modules/${name}/start/strapi-start.js`,
-      `--dir=${context.workspaceRoot}/${options.root}`
-    ]);
+    const ls = spawn(
+      `node`,
+      [
+        `${context.workspaceRoot}/node_modules/${name}/start/strapi-start.js`,
+        `--dir=${context.workspaceRoot}/${options.root}`
+      ],
+      {
+        env: {
+          ...process.env,
+          NODE_ENV: 'production'
+        }
+      }
+    );
 
     ls.on('close', (code) => {
       console.log(`Exited with code ${code}`);
