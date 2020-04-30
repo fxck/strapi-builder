@@ -5,7 +5,7 @@ export default createBuilder<{ root: string; }>((options, context) => {
   return new Promise<BuilderOutput>(resolve => {
 
     const ls = spawn(`node`, [
-      'strapi-build.js',
+      './strapi-build.js',
       `--dir=${context.workspaceRoot}/${options.root}`
     ]);
 
