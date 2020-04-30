@@ -1,11 +1,15 @@
 {
   "name": "@zerops/strapi-builder",
-  "version": "0.0.5",
+  "version": "0.0.9",
   "private": false,
   "description": "Strapi Plugin for Nx",
   "author": "Ales Rechtorik",
   "builders": "./builders.json",
   "dependencies": {
-    "@angular-devkit/architect": "~0.901.0"
+    "@angular-devkit/architect": "~0.901.0",
+    "rxjs": "6.5.4"
+  },
+  "devDependencies": {
+    "typescript": "3.8.3"
   }
 }

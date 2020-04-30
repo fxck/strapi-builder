@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es5",
+    "module": "esnext",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "lib": [ "es2017" ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "exclude": [ "node_modules" ]
+}
