@@ -1,8 +1,17 @@
 import { BuilderOutput, createBuilder } from '@angular-devkit/architect';
+import { spawn } from 'child_process';
 
 export default createBuilder((options, context) => {
   return new Promise<BuilderOutput>(resolve => {
-    console.log(options);
-    resolve({ success: true });
+    const ls = spawn('strapi build');
+
+    ls.on('close', (code) => {
+      console.log(`Exited with code ${code}`);
+      resolve({ success: true });
+    });
+
+    ls.stdout.on('data', (data) => {
+      console.log(`stdout: ${data}`);
+    });
   });
 });
