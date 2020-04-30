@@ -12,8 +12,6 @@ const strapiAdmin = require('strapi-admin');
 const loadConfigFile = require('./load/load-config-files');
 const addSlash = require('./utils/addSlash');
 
-// console.log(process);
-
 const buildCommand = async ({ clean, optimization, dir = process.cwd() }) => {
   const env = process.env.NODE_ENV || 'development';
 
