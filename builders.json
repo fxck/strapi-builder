@@ -5,11 +5,6 @@
       "schema": "./build/schema.json",
       "description": "Builds strapi."
     },
-    "run": {
-      "implementation": "./start/start.impl",
-      "schema": "./start/schema.json",
-      "description": "Start strapi."
-    },
     "serve": {
       "implementation": "./develop/develop.impl",
       "schema": "./develop/schema.json",

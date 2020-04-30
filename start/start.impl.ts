@@ -2,19 +2,25 @@ import { BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { spawn } from 'child_process';
 const { name } = require('../package.json');
 
-export default createBuilder<{ root: string; }>((options, context) => {
+export default createBuilder<{ root: string; prod: boolean; }>((options, context) => {
   return new Promise<BuilderOutput>(resolve => {
+
+    const file = options.prod
+      ? `${context.workspaceRoot}/node_modules/${name}/start/strapi-start.js`
+      : `${context.workspaceRoot}/node_modules/${name}/start/strapi-develop.js`
 
     const ls = spawn(
       `node`,
       [
-        `${context.workspaceRoot}/node_modules/${name}/start/strapi-start.js`,
-        `--dir=${context.workspaceRoot}/${options.root}`
+        file,
+        `--dir=${context.workspaceRoot}/${options.root}`,
+        `--root=${context.workspaceRoot}`,
+        `--name=${name}`
       ],
       {
         env: {
           ...process.env,
-          NODE_ENV: 'production'
+          NODE_ENV: options.prod ? 'production' : 'development'
         }
       }
     );

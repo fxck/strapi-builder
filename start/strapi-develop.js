@@ -67,7 +67,7 @@ const argv = yargs
         //  Start the front-end dev server
         if (watchAdmin) {
           try {
-            execa('node', [`${root}/node_module/${name}/develop/strapi-watch-admin.js`], {
+            execa('node', [`${root}/node_modules/${name}/develop/strapi-watch-admin.js`], {
               stdio: 'inherit',
             });
           } catch (err) {
