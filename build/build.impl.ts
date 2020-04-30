@@ -1,11 +1,12 @@
 import { BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { spawn } from 'child_process';
+const { name } = require('../package.json');
 
 export default createBuilder<{ root: string; }>((options, context) => {
   return new Promise<BuilderOutput>(resolve => {
 
     const ls = spawn(`node`, [
-      './strapi-build.js',
+      `${context.workspaceRoot}/node_modules/${name}/strapi-build.js`,
       `--dir=${context.workspaceRoot}/${options.root}`
     ]);
 
