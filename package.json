@@ -1,6 +1,6 @@
 {
   "name": "@zerops/strapi-builder",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": false,
   "description": "Strapi Plugin for Nx",
   "author": "Ales Rechtorik",
@@ -20,6 +20,6 @@
     "typescript": "3.8.3",
     "chokidar": "3.3.1",
     "execa": "^1.0.0",
-    "fs-extra": "8.1.0",
+    "fs-extra": "8.1.0"
   }
 }
