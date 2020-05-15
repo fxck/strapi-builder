@@ -60,10 +60,10 @@ const defaultConfig = {
   policies: {},
 };
 
-module.exports = (dir, initialConfig = {}) => {
+module.exports = (dir, initialConfig = {}, root = dir) => {
   const { autoReload = false, serveAdminPanel = true } = initialConfig;
 
-  const pkgJSON = require(path.resolve(dir, 'package.json'));
+  const pkgJSON = require(path.resolve(root, 'package.json'));
 
   const configDir = path.resolve(dir || process.cwd(), 'config');
 

@@ -34,12 +34,12 @@ const argv = yargs
  */
 const develop = async function({
   root,
+  dir = process.cwd(),
   name,
   build,
   watchAdmin
 }) {
-  const dir = process.cwd();
-  const config = loadConfiguration(dir);
+  const config = loadConfiguration(dir, undefined, root);
 
   const adminWatchIgnoreFiles = config.get('server.admin.watchIgnoreFiles', []);
 
