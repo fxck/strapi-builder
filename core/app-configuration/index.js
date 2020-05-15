@@ -16,7 +16,7 @@ const getPrefixedDeps = require('../../utils/get-prefixed-dependencies');
 const loadPolicies = require('../load-policies');
 const loadFunctions = require('../load-functions');
 
-const { version: strapiVersion } = require(path.join(__dirname, '../../../package.json'));
+const strapiVersion = '3.0.0-rc.0'
 
 const CONFIG_PATHS = {
   admin: 'admin',
