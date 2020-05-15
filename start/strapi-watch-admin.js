@@ -3,7 +3,7 @@ const strapiAdmin = require('strapi-admin');
 const { getConfigUrls } = require('strapi-utils');
 
 const loadConfiguration = require('../core/app-configuration');
-const addSlash = require('../strapi-utils/addSlash');
+const addSlash = require('../utils/addSlash');
 
 module.exports = async function() {
   const dir = process.cwd();
