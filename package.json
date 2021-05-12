@@ -11,7 +11,7 @@
   "dependencies": {
     "@angular-devkit/architect": "~0.901.0",
     "@types/node": "^13.13.4",
-    "strapi": "3.0.0-rc.0",
+    "strapi": "3.2.5",
     "strapi-utils": "3.0.0-rc.0",
     "strapi-admin": "3.0.0-rc.0",
     "rxjs": "6.5.4"
